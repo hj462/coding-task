@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "antd/dist/antd.css";
 import { lazy, Suspense } from "react";
 import { Spin } from "antd";
@@ -16,6 +21,7 @@ function App() {
         <Router>
           <div>
             <Switch>
+              <Redirect exact from="/" to="/list-tasks"></Redirect>
               <Route path="/list-tasks">
                 <ListTasks />
               </Route>
